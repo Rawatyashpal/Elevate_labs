@@ -152,3 +152,10 @@ LEFT JOIN Orders o ON c.CustomerID = o.CustomerID
 GROUP BY c.Name;
 GO
 
+-- (f) Create index on foreign keys and search columns
+CREATE INDEX idx_orders_customerid ON Orders(CustomerID);
+CREATE INDEX idx_orderdetails_orderid ON OrderDetails(OrderID);
+CREATE INDEX idx_orderdetails_productid ON OrderDetails(ProductID);
+CREATE INDEX idx_products_category ON Products(Category);
+
+
